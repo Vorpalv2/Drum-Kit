@@ -4,10 +4,12 @@ var loopender = document.querySelectorAll(".drum").length;
 for (var i = 0; i < loopender; i++) {
    document.querySelectorAll(".drum")[i].addEventListener("click",eventPressed);
 }
+
+
 function eventPressed(){
     var audioObject = new Audio("sounds/tom-1.mp3");
     audioObject.play();
-    console.log(this.style.color="white");
+    this.style.color="white";
 }
 
 /*
