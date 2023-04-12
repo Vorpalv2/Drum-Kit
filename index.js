@@ -3,19 +3,18 @@ var loopender = document.querySelectorAll(".drum").length;
 
 for (var i = 0; i < loopender; i++) 
 {
-   document.querySelectorAll(".drum")[i].addEventListener("click",function()
-   {
+document.querySelectorAll(".drum")[i].addEventListener("click",function()
+{
     var innerHTMLswitch = this.innerHTML;
     Switched(innerHTMLswitch); 
-   });
+});
 }
 
 
 document.addEventListener("keydown",function(event)
-   {
+{
     Switched(event.key);
- 
-  });
+});
 
 
 function Switched(value){
