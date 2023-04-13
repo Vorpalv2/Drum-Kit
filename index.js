@@ -7,6 +7,7 @@ document.querySelectorAll(".drum")[i].addEventListener("click",function()
 {
     var innerHTMLswitch = this.innerHTML;
     Switched(innerHTMLswitch); 
+    buttonAnimation(innerHTMLswitch);
 });
 }
 
@@ -14,8 +15,14 @@ document.querySelectorAll(".drum")[i].addEventListener("click",function()
 document.addEventListener("keydown",function(event)
 {
     Switched(event.key);
+    buttonAnimation(event.key)
 });
 
+function buttonAnimation(currentkey){
+var activeButton = document.querySelector("." +currentkey);
+activeButton.classList.add("pressed");
+setTimeout(function(){activeButton.classList.remove("pressed")},100);
+}
 
 function Switched(value){
     switch (value) {
@@ -55,28 +62,11 @@ function Switched(value){
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*function eventPressed(){
     var audioObject = new Audio("sounds/tom-1.mp3");
     audioObject.play();
 }
 */
-
-
-
 /*
 function add(num1,num2){
     return num1+num2;
